@@ -1,0 +1,16 @@
+@startuml
+actor Usuario
+participant App
+participant Servidor
+
+Usuario -> App: Solicitar descargar libro
+App -> Servidor: ¿Tiene cuenta registrada?
+Servidor --> App: Sí/No
+App -> Usuario: Si no tiene cuenta, mostrar opción para registrarse
+App -> Servidor: ¿Membresía activa?
+Servidor --> App: Sí/No
+App -> Usuario: Si no está activa, solicitar pago
+App -> Servidor: Descargar libro
+Servidor --> App: Confirmar libro disponible
+App -> Usuario: Habilitar descarga del libro
+@enduml
